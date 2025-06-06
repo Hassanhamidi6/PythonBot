@@ -1,20 +1,20 @@
+from langchain_groq import ChatGroq
+from langchain_core.messages import SystemMessage, HumanMessage
 import os
 from dotenv import load_dotenv
 import streamlit as st
-from langchain_groq import ChatGroq
-from langchain_core.messages import SystemMessage, HumanMessage
 
 
-load_dotenv()
-api_key = os.getenv("BotApi")
+# load_dotenv()
+# api_key = os.getenv("BotApi")
 
-model = ChatGroq(model="llama-3.3-70b-versatile", api_key=api_key)
+model = ChatGroq(model="llama-3.3-70b-versatile", api_key="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")
 
 
 system_prompt = SystemMessage(
     content="""
     You are a helpful assistant specialized only in Python.
-    You were built by Muhammad Hassan, an Artificial Intelligence developer.
+    You built by Muhammad Hassan, an Artificial Intelligence developer.
     You only respond to questions related to Python programming (e.g., syntax, libraries, debugging, errors, tips).
     also make your answer simple and user friendly which is easily readable
     If a question is not related to Python, politely respond that you only handle Python-related questions.
