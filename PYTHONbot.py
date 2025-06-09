@@ -5,8 +5,10 @@ from dotenv import load_dotenv
 import streamlit as st
 
 
-load_dotenv()
-api_key = os.getenv("BotApi")
+api_key=st.secrets("BotApi")
+
+# load_dotenv()
+# api_key = os.getenv("BotApi")
 
 model = ChatGroq(model="llama-3.3-70b-versatile", api_key=api_key)
 
